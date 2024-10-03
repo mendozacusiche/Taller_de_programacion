@@ -5,13 +5,17 @@ public class Agenda {
 
     public  Agenda(){
         // recordar que los arreglos en java comienzan desde cero
-        this.dia = 4;
-        this.turno = 5;
+        this.dia = 5;
+        this.turno = 6;
         this.matriz  = new Paciente[dia][turno];
     }
 
    public  void agendarPaciente(Paciente paciente, int dia, int hora){
-        this.matriz[dia --][hora --]=paciente;
+       // Ajustar el día y la hora para que sean índices basados en 0
+       dia--;
+       hora--;
+       matriz[dia][hora] = paciente;
+
    }
 
    public void liberarTurnos(String nombre){
@@ -25,14 +29,14 @@ public class Agenda {
        }
    }
 
-   public boolean tieneTurnoAgendado(String nombre, int unDia){
-        int dia = unDia--;
+   public boolean tieneTurnoAgendado(String nombre, int dia){
+        dia--;
         int hora = 0;
         boolean exite = false;
 
         while (hora < matriz[dia].length && !exite){
 
-            if(matriz[dia][hora] != null && matriz[dia][hora].equals(nombre))
+            if(matriz[dia][hora] != null && matriz[dia][hora].getNombre().equals(nombre))
                 exite = true;
             else{
                 exite = false;

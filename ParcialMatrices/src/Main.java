@@ -4,16 +4,16 @@ public class Main {
         Paciente juan, pedro, fran, lucas;
 
         //
-        juan = new Paciente("juan",false, 5000);
+        juan = new Paciente("Juan",false, 5000);
         pedro = new Paciente("Pedro", true,10000);
         fran = new Paciente("Fran", true, 5600);
         lucas = new Paciente("Lucas", false, 17000);
 
         // turnos 5 dias 6 turnos
-        unaAgenda.agendarPaciente(juan,1,6);
-        unaAgenda.agendarPaciente(pedro,2,5);
-        unaAgenda.agendarPaciente(fran,2,1);
-        unaAgenda.agendarPaciente(lucas, 1,1);
+        unaAgenda.agendarPaciente(juan,1,1);
+        unaAgenda.agendarPaciente(pedro,2,2);
+        unaAgenda.agendarPaciente(fran,2,3);
+        unaAgenda.agendarPaciente(lucas, 5,5);
 
 
 
